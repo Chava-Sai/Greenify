@@ -29,19 +29,19 @@ class _MonthPageState extends State<MonthPage> {
     _values[DateTime(2023, 4, 6)] = 17.81;
     _values[DateTime(2023, 4, 7)] = 1.05;
     _values[DateTime(2023, 4, 8)] = 10.97;
-    _values[DateTime(2023, 4, 9)] = 0.1;
-    _values[DateTime(2023, 4, 10)] = 15.4;
-    _values[DateTime(2023, 4, 11)] = 11.01;
-    _values[DateTime(2023, 4, 12)] = 5.67;
-    _values[DateTime(2023, 4, 13)] = 7.83;
-    _values[DateTime(2023, 4, 14)] = 18.57;
-    _values[DateTime(2023, 4, 15)] = 15.54;
-    _values[DateTime(2023, 4, 16)] = 19.79;
-    _values[DateTime(2023, 4, 17)] = 15.66;
-    _values[DateTime(2023, 4, 18)] = 6.73;
-    _values[DateTime(2023, 4, 19)] = 7.66;
-    _values[DateTime(2023, 4, 20)] = 12.19;
-    _values[DateTime(2023, 4, 21)] = 17.83;
+    // _values[DateTime(2023, 4, 9)] = 0.1;
+    // _values[DateTime(2023, 4, 10)] = 15.4;
+    // _values[DateTime(2023, 4, 11)] = 11.01;
+    // _values[DateTime(2023, 4, 12)] = 5.67;
+    // _values[DateTime(2023, 4, 13)] = 7.83;
+    // _values[DateTime(2023, 4, 14)] = 18.57;
+    // _values[DateTime(2023, 4, 15)] = 15.54;
+    // _values[DateTime(2023, 4, 16)] = 19.79;
+    // _values[DateTime(2023, 4, 17)] = 15.66;
+    // _values[DateTime(2023, 4, 18)] = 6.73;
+    // _values[DateTime(2023, 4, 19)] = 7.66;
+    // _values[DateTime(2023, 4, 20)] = 12.19;
+    // _values[DateTime(2023, 4, 21)] = 17.83;
   }
 
   List<DateTime> _getDaysInMonth(DateTime month) {

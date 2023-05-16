@@ -441,24 +441,24 @@ class _WeatherPageState extends State<WeatherPage> {
                     ),
                   ],
                 ),
-                Positioned(
-                  left: _x,
-                  top: _y,
-                  child: GestureDetector(
-                    onPanUpdate: _updatePosition,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ChatScreen()),
-                      );
-                    },
-                    child: Icon(
-                      Icons.chat,
-                      size: 50,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
+                // Positioned(
+                //   left: _x,
+                //   top: _y,
+                //   child: GestureDetector(
+                //     onPanUpdate: _updatePosition,
+                //     onTap: () {
+                //       Navigator.push(
+                //         context,
+                //         MaterialPageRoute(builder: (context) => ChatScreen()),
+                //       );
+                //     },
+                //     child: Icon(
+                //       Icons.chat,
+                //       size: 50,
+                //       color: Colors.black,
+                //     ),
+                //   ),
+                // ),
 
               ],
             ),

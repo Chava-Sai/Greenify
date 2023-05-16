@@ -3,10 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:greenify/register/login.dart';
-import 'package:greenify/register/signupcontroller.dart';
+import 'login.dart';
+import 'signupcontroller.dart';
 
-bool _obscureText = true;
 
 class MyRegister extends StatefulWidget {
   const MyRegister({Key? key}) : super(key: key);
@@ -22,8 +21,6 @@ class _MyRegisterState extends State<MyRegister> {
   String? _phonenumber;
   String? _password;
 
-  final _usernameController = TextEditingController();
-  final _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignUpController());
@@ -40,26 +37,19 @@ class _MyRegisterState extends State<MyRegister> {
           ),
         ),
         Container(
-          padding: EdgeInsets.only(left: 35, top: 70),
+          padding: EdgeInsets.only(left: 35 , top: 70),
           child: const Text(
             "Create\nAccount",
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 33,
-                decoration: TextDecoration.none),
+            style: TextStyle(color: Colors.white , fontSize: 33,decoration: TextDecoration.none),
           ),
         ),
         Scaffold(
-          backgroundColor:
-              Colors.transparent, // Set the background color to transparent
+          backgroundColor: Colors.transparent, // Set the background color to transparent
           body: Form(
             key: _formKey,
             child: SingleChildScrollView(
               child: Container(
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.29,
-                    right: 35,
-                    left: 35),
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.29,right: 35,left: 35),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -79,10 +69,11 @@ class _MyRegisterState extends State<MyRegister> {
                         contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide(color: Colors.white)),
+                            borderSide: BorderSide(color: Colors.white)
+                        ),
                       ),
                       validator: (value) =>
-                          value!.isEmpty ? 'Please enter your Email' : null,
+                      value!.isEmpty ? 'Please enter your Email' : null,
                       onSaved: (value) {
                         _fullname = value;
                       },
@@ -104,10 +95,11 @@ class _MyRegisterState extends State<MyRegister> {
                         contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide(color: Colors.white)),
+                            borderSide: BorderSide(color: Colors.white)
+                        ),
                       ),
                       validator: (value) =>
-                          value!.isEmpty ? 'Please enter your Email' : null,
+                      value!.isEmpty ? 'Please enter your Email' : null,
                       onSaved: (value) {
                         _email = value;
                       },
@@ -129,41 +121,38 @@ class _MyRegisterState extends State<MyRegister> {
                         contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide(color: Colors.white)),
+                            borderSide: BorderSide(color: Colors.white)
+                        ),
                       ),
                       validator: (value) =>
-                          value!.isEmpty ? 'Please enter your Email' : null,
+                      value!.isEmpty ? 'Please enter your Email' : null,
                       onSaved: (value) {
                         _phonenumber = value;
                       },
                     ),
                     SizedBox(height: 30),
                     TextFormField(
-                      controller: _passwordController,
-                      obscureText: _obscureText,
+                      controller: controller.password,
+                      obscureText: true,
                       decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.black),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.white),
+                        ),
                         labelText: 'Password',
                         labelStyle: TextStyle(fontWeight: FontWeight.bold),
                         contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        suffixIcon: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              _obscureText = !_obscureText;
-                            });
-                          },
-                          child: Icon(
-                            _obscureText
-                                ? Icons.visibility_off
-                                : Icons.visibility,
-                            color: Colors.grey,
-                          ),
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(color: Colors.white)
                         ),
                       ),
                       validator: (value) =>
-                          value!.isEmpty ? 'Please enter your password' : null,
+                      value!.isEmpty ? 'Please enter your Password' : null,
                       onSaved: (value) {
                         _password = value;
                       },
@@ -173,10 +162,8 @@ class _MyRegisterState extends State<MyRegister> {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            SignUpController.instance.registerUser(
-                                controller.email.text.trim(),
-                                controller.password.text.trim());
+                          if(_formKey.currentState!.validate() ){
+                            SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
                           }
                         },
                         child: Text('SignUp'),
@@ -186,16 +173,14 @@ class _MyRegisterState extends State<MyRegister> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginPage()));
-                        },
+                        onPressed: () {Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoginPage()));},
                         child: Text('Login'),
                       ),
                     )
                   ],
+
                 ),
               ),
             ),
